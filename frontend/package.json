@@ -1,13 +1,13 @@
 {
-  "name": "currency_converter",
+  "name": "frontend",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "../node_modules/.bin/vite",
-    "build": "../node_modules/.bin/tsc -b && vite build",
-    "lint": "../node_modules/.bin/eslint .",
-    "preview": "../node_modules/.bin/vite preview"
+    "dev": "npx vite",
+    "build": "npx tsc -b && npx vite build",
+    "lint": "npx eslint .",
+    "preview": "npx vite preview"
   },
   "dependencies": {
     "react": "^19.0.0",
