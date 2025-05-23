@@ -1,0 +1,15 @@
+nav{
+    height: var(--nav-height);
+    background-color: var(--primary-dark);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+.nav-menu{
+    gap: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
