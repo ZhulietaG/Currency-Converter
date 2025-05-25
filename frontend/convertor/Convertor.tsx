@@ -42,7 +42,7 @@ export const Convertor: FC = () => {
             if (intoValue in parsedData.conversion_rates){
                 const currencyRate = parsedData.conversion_rates[intoValue];
                 const currencyResult = amountValue * currencyRate;
-                const parsedUpdate = parsedData.time_last_update_utc
+                const parsedUpdate = parsedData.time_last_update_utc;
                 const update = moment(parsedUpdate).format("DD/MM/YYYY HH:mm:ss");
                 setCurrencyRate(currencyRate.toFixed(2));
                 setCurrencyResult(currencyResult.toFixed(2));

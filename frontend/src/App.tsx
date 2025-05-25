@@ -11,8 +11,8 @@ function App() {
             <Navigation/>
             <Routes>
                 <Route path={"/"} element={<Home/>}></Route>
-                <Route path={"http://localhost:3001/user"}></Route>
-                <Route path={"http://localhost:3001/user"}></Route>
+                <Route path={"/register"} element={""}></Route>
+                <Route path={"/login"} element={""}></Route>
                 <Route path={"*"} element={<NotFound/>}></Route>
             </Routes>
         </BrowserRouter>
