@@ -3,6 +3,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {Home, LoginPage, NotFound} from "../pages"
 import {Navigation} from "../components";
 import {RegistrationPage} from "../pages/LoginPage/RegistrationPage.tsx";
+import {Dashboard} from "../pages/Dashboard.tsx";
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
                 <Route path={"/"} element={<Home/>}></Route>
                 <Route path={"/register"} element={<RegistrationPage/>}></Route>
                 <Route path={"/login"} element={<LoginPage/>}></Route>
+                <Route path={"/dashboard"} element={<Dashboard/>}></Route>
                 <Route path={"*"} element={<NotFound/>}></Route>
             </Routes>
         </BrowserRouter>
