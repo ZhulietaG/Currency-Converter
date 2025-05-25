@@ -18,7 +18,7 @@ export class UserModel {
     }
     async create(user: CreateUser) {
         const [result] = await this.db.execute(`INSERT INTO users(id, username, email, password, is_active) VALUES (?, ?, ?, ?, ?)`, [
-            uuidv4(), user.username, user.email, user.password, user.isActive
+            uuidv4(), user.username, user.email, user.password, 1
         ]);
         return `User with id created`;
     }
