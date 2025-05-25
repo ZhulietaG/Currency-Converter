@@ -25,8 +25,7 @@ export class UserModel {
     async update(id: string, user: any) {
         const fields = Object.keys(user).map(key => `${key} = ?`).join(',');
         const values = Object.values(user);
-        const idNumber = Number(id);
-        values.push(idNumber);
+        values.push(id);
         const result = await this.db.execute(`UPDATE users SET ${fields} WHERE id = ?`, values)
         return `Updated user ${id}`
     }
