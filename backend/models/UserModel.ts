@@ -12,6 +12,10 @@ export class UserModel {
         const [rows] = await this.db.query("SELECT * FROM users");
         return rows;
     }
+    async getAllEmails() {
+        const [rows] = await this.db.query("SELECT email FROM users");
+        return rows;
+    }
     async getById(id: string) {
         const result = await this.db.execute<User[] & RowDataPacket[]>(`SELECT * FROM users WHERE id = ?`, [id]);
         return result[0][0];
@@ -25,8 +29,7 @@ export class UserModel {
     async update(id: string, user: any) {
         const fields = Object.keys(user).map(key => `${key} = ?`).join(',');
         const values = Object.values(user);
-        const idNumber = Number(id);
-        values.push(idNumber);
+        values.push(id);
         const result = await this.db.execute(`UPDATE users SET ${fields} WHERE id = ?`, values)
         return `Updated user ${id}`
     }

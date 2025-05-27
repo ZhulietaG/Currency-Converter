@@ -1,17 +1,20 @@
 import {FC, useState, useEffect, ChangeEvent} from "react";
 import {endPointPath} from "../config/api";
-import axios from "axios";
 import moment from "moment";
 import {Dropdown} from "./Dropdown";
 import {Result} from "./Result";
 
+interface Props {
+    from: string,
+    into: string,
+    amount: number,
+}
 
-export const Convertor: FC = () => {
-
-    const [from, setFrom] = useState<string>("EUR - Euro (€)");
-    const [into, setInto] = useState<string>("INR - Indian Rupee (₹)");
+export const Convertor: FC<Props> = (props: Props) => {
+    const [from, setFrom] = useState<string>(props.from);
+    const [into, setInto] = useState<string>(props.into);
     const [loading, setLoading] = useState<boolean>(false)
-    const [amount, setAmount] = useState<number>(1)
+    const [amount, setAmount] = useState<number>(props.amount)
     const [currencyResult, setCurrencyResult] = useState<string>("")
     const [currencyRate, setCurrencyRate] = useState<string>("");
     const [amountValue, setAmountValue] = useState<string>("");
@@ -37,20 +40,22 @@ export const Convertor: FC = () => {
         const url = endPointPath(fromValue);
         try{
             setLoading(true)
-            const response  = await axios.get(url);
-            const parsedData = response.data;
-            if (intoValue in parsedData.conversion_rates){
-                const currencyRate = parsedData.conversion_rates[intoValue];
-                const currencyResult = amountValue * currencyRate;
-                const parsedUpdate = parsedData.time_last_update_utc;
-                const update = moment(parsedUpdate).format("DD/MM/YYYY HH:mm:ss");
-                setCurrencyRate(currencyRate.toFixed(2));
-                setCurrencyResult(currencyResult.toFixed(2));
-                setAmountValue(amountValue.toString());
-                setUpdate(update);
-            } else {
-                console.error("Error while converting currency: Invalid data");
-            }
+            const response = await fetch(url);
+            response.json().then(data => {
+                const parsedData = data;
+               if (intoValue in parsedData.conversion_rates){
+                    const currencyRate = parsedData.conversion_rates[intoValue];
+                    const currencyResult = amountValue * currencyRate;
+                    const parsedUpdate = parsedData.time_last_update_utc;
+                    const update = moment(parsedUpdate).format("DD/MM/YYYY HH:mm:ss");
+                    setCurrencyRate(currencyRate.toFixed(2));
+                    setCurrencyResult(currencyResult.toFixed(2));
+                    setAmountValue(amountValue.toString());
+                    setUpdate(update);
+               } else {
+                   console.error("Error while converting currency: Invalid data");
+               }
+            })
         } catch (error) {
             console.error(error)
         } finally {

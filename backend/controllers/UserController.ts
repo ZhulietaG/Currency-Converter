@@ -7,6 +7,9 @@ export class UserController {
     async getAllUsers() {
         return await userModel.getAll();
     }
+    async getAllEmails() {
+        return await userModel.getAllEmails();
+    }
     async getUserById(id: string) {
         return await userModel.getById(id);
     }

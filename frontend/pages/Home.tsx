@@ -11,7 +11,7 @@ export const Home: FC = () => {
                     <p className={"main-header-text"}>Wield the power of real-time currency conversion like a true Tarnished. Fair rates, fast swaps, and zero hidden fees — because even heroes need coin to conquer kingdoms.</p>
                 </div>
                 <div className={"main-convertor"}>
-                    <Convertor />
+                    <Convertor from={"EUR - Euro (€)"} into={"INR - Indian Rupee (₹)"} amount={1} />
                 </div>
             </section>
         </>
