@@ -1,5 +1,5 @@
 import { FC } from "react";
-import "./Navigation.css"
+import "../css/Navigation.css"
 import {NavLink} from "react-router-dom";
 
 

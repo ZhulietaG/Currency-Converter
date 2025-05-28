@@ -3,6 +3,7 @@ import {endPointPath} from "../config/api";
 import moment from "moment";
 import {Dropdown} from "./Dropdown";
 import {Result} from "./Result";
+import "../css/Convertor.css";
 
 interface Props {
     from: string,

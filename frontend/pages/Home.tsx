@@ -1,5 +1,5 @@
 import {FC} from "react";
-import "./Home.css";
+import "../css/Home.css";
 import {Convertor} from "../convertor/Convertor.tsx";
 
 export const Home: FC = () => {

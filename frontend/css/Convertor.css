@@ -1,0 +1,46 @@
+.container-fluid{
+    background-color: var(--secondary);
+    border-radius: 10px;
+    color: var(--accent-light);
+    padding: 10px;
+}
+
+.form-control-lg{
+    margin: 10px 0;
+    display: inline-block;
+    width: 50%;
+    font-size: 16px;
+    text-align: center;
+}
+
+.currency-from{
+    margin: 10px 10px;
+}
+
+.currency-into{
+    margin: 10px 10px;
+}
+
+
+.result{
+    color: var(--accent-light);
+}
+
+.btn {
+    margin: 10px 10px;
+    padding: 15px 15px;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    width: 50%;
+    background-color: #31403d;
+    color: white;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #1A2324;
+    color: #f2d16c;
+}
+

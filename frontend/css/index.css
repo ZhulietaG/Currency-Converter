@@ -1,14 +1,11 @@
 :root {
   --white: #fff;
   --black: #000;
-  --primary: #efefef;
+  --primary-light: #efefef;
   --primary-dark: #1A2324;
-  --primary-light: #ffffff;
   --secondary: #687356;
   --secondary-light: #bdbe8e;
   --secondary-dark: #31403d;
-  --accent: #dbd2b0;
-  --accent-dark: #B07A43;
   --accent-light: #f2d16c;
   --nav-height: 60px;
 }
