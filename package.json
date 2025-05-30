@@ -1,0 +1,25 @@
+{
+  "name": "currency_converter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "scripts": {
+    "dev": "concurrently \"npm run start-be\" \"npm run start-fe\"",
+    "start-be": "cd backend && npm run start",
+    "start-fe": "cd frontend && npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZhulietaG/Currency-Converter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZhulietaG/Currency-Converter/issues"
+  },
+  "homepage": "https://github.com/ZhulietaG/Currency-Converter#readme",
+  "description": ""
+}
