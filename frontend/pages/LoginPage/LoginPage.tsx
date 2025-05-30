@@ -1,12 +1,56 @@
-import {NavLink, useNavigate} from "react-router-dom";
+import {useForm} from 'react-hook-form';
+import {useNavigate} from "react-router-dom";
+import {useState} from "react";
+
+interface LoginFormInputs {
+    email: string;
+    password: string;
+}
+
+// Using built-in browser property localStorage of Window interface for saving tokens
+// https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
 
 export const LoginPage = () => {
 
-    //const navigation = useNavigate();
+    const navigation = useNavigate();
+    const { register, handleSubmit } = useForm();
+
+    const onSubmit = async (data: LoginFormInputs)=> {
+        try{
+            const response = await fetch('http://localhost:3001/user/login', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+
+            if(!response.ok){
+                throw new Error("Login failed.");
+            }
+
+            const result = await response.json();
+
+            localStorage.setItem('token', result.token);
+
+            navigation("/dashboard");
+
+        }
+        catch(error){
+            console.error('Error during login:', error);
+            alert('Login failed. Please check your email and password.');
+        }
+    };
 
     return (
-
-        <NavLink to={"/registration"}>Registration</NavLink>
+        <div>
+            <h1>Bombardiro krokodilo LOGIN</h1>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <input required={true} {...register("email")} type={"email"} placeholder={"Email address"}/>
+                <input required={true} {...register("password")} type={"password"} placeholder={"Password"}/>
+                <button type="submit">Login</button>
+            </form>
+        </div>
     )
 
 }

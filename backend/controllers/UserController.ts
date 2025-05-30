@@ -13,6 +13,11 @@ export class UserController {
     async getUserById(id: string) {
         return await userModel.getById(id);
     }
+
+    async getUserByEmail(email: string) {
+        return await userModel.getByEmail(email);
+    }
+
     async createUser(user: CreateUser) {
         return await userModel.create(user);
     }
@@ -22,4 +27,28 @@ export class UserController {
     async deleteUser(id: string) {
         return await userModel.delete(id);
     }
+
+    async login(email: string, password: string) {
+        const user = await this.getUserByEmail(email);
+        if (!user) {
+            throw new Error ("User not found");
+        }
+
+        if (user.password != password) {
+            throw new Error ("Invalid email or password");
+        }
+
+        /*    // uncomment after generateToken implementation
+        const token = generateToken({
+            id: user.id,
+            username: user.username,
+            exp: Date.now() + 60 * 60 * 1000, // 1 час валидност
+        });
+
+        return { token }; */
+
+
+
+    }
+
 }

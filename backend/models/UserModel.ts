@@ -20,6 +20,12 @@ export class UserModel {
         const result = await this.db.execute<User[] & RowDataPacket[]>(`SELECT * FROM users WHERE id = ?`, [id]);
         return result[0][0];
     }
+
+    async getByEmail(email: string) {
+        const result = await this.db.execute<User[] & RowDataPacket[]>(`SELECT * FROM users WHERE email = ?`, [email]);
+        return result[0];
+    }
+
     async create(user: CreateUser) {
         const [result] = await this.db.execute(`INSERT INTO users(id, username, email, password, is_active) VALUES (?, ?, ?, ?, ?)`, [
             uuidv4(), user.username, user.email, user.password, 1
