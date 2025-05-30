@@ -7,28 +7,54 @@ export const userRoutes = Router();
 userRoutes.get("/user", async (req: Request, res: Response) => {
     res.send(await userController.getAllUsers());
 })
-userRoutes.get("user/emails", async (req: Request, res: Response) => {
+userRoutes.get("emails", async (req: Request, res: Response) => {
     res.send(await userController.getAllEmails());
 })
 userRoutes.get("/user/:id", async (req: Request, res: Response) => {
     const id = req.params.id;
     res.send(await userController.getUserById(id));
 })
+
+userRoutes.post("/user/find", async (req: Request, res: Response) => {
+    const { email } = req.body;
+    try {
+        const user = await userController.getUserByEmail(email);
+        res.status(200).send(user);
+    } catch (error: any) {
+        res.status(404).send({ error: error.message });
+    }
+});
+
 userRoutes.post("/user", async (req: Request, res: Response) => {
     const data = req.body;
-    res.send(await userController.createUser(data));
+    try{
+        res.status(201).send(await userController.createUser(data));
+    }
+    catch (error: any) {
+        res.status(400).send({ error: error.message });
+    }
 })
 userRoutes.put("/user/:id", (req: Request, res: Response) => {
     const id = req.params.id;
     const data = req.body;
-    res.send(userController.updateUser(id, data));
+    try {
+        res.status(200).send(userController.updateUser(id, data));
+    }
+    catch(error: any) {
+        res.status(400).send({ error: error.message });
+    }
 })
 userRoutes.delete("/user/:id", async (req: Request, res: Response) => {
     const id = req.params.id;
-    res.send(await userController.deleteUser(id));
+    try {
+        res.status(200).send(await userController.deleteUser(id));
+    }
+    catch (error: any) {
+        res.status(404).send({ error: error.message });
+    }
 })
 
-userRoutes.post("user/login", async (req: Request, res: Response) => {
+userRoutes.post("/login", async (req: Request, res: Response) => {
     const { email, password } = req.body;
 
     try {

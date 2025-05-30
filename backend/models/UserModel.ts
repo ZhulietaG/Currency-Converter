@@ -23,7 +23,7 @@ export class UserModel {
 
     async getByEmail(email: string) {
         const result = await this.db.execute<User[] & RowDataPacket[]>(`SELECT * FROM users WHERE email = ?`, [email]);
-        return result[0];
+        return result[0][0];
     }
 
     async create(user: CreateUser) {

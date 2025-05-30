@@ -29,7 +29,7 @@ export class UserController {
     }
 
     async login(email: string, password: string) {
-        const user = await this.getUserByEmail(email);
+        const user = await userModel.getByEmail(email);
         if (!user) {
             throw new Error ("User not found");
         }
