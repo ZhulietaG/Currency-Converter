@@ -12,12 +12,12 @@ interface LoginFormInputs {
 
 export const LoginPage = () => {
 
-    const navigation = useNavigate();
-    const { register, handleSubmit } = useForm();
+    const navigate = useNavigate();
+    const { register, handleSubmit } = useForm<LoginFormInputs>();
 
     const onSubmit = async (data: LoginFormInputs)=> {
         try{
-            const response = await fetch('http://localhost:3001/user/login', {
+            const response = await fetch('http://localhost:3001/login', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -29,11 +29,14 @@ export const LoginPage = () => {
                 throw new Error("Login failed.");
             }
 
+            alert('Successfully logged in!');
+
+            /* // These will work after token implementation
             const result = await response.json();
 
             localStorage.setItem('token', result.token);
 
-            navigation("/dashboard");
+            navigate("/dashboard/${result.id}"); */
 
         }
         catch(error){
