@@ -2,6 +2,7 @@ import {useForm} from 'react-hook-form';
 import {useNavigate} from "react-router-dom";
 import {useState} from "react";
 
+
 interface LoginFormInputs {
     email: string;
     password: string;
@@ -31,12 +32,11 @@ export const LoginPage = () => {
 
             alert('Successfully logged in!');
 
-            /* // These will work after token implementation
             const result = await response.json();
 
             localStorage.setItem('token', result.token);
 
-            navigate("/dashboard/${result.id}"); */
+            navigate("/dashboard/${result.id}");
 
         }
         catch(error){

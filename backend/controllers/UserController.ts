@@ -1,5 +1,6 @@
 import {UserModel} from "../models";
 import {CreateUser} from "../common/";
+import { generateToken } from "../utils/auth";
 
 const userModel = new UserModel();
 export class UserController {
@@ -38,14 +39,13 @@ export class UserController {
             throw new Error ("Invalid email or password");
         }
 
-        /*    // uncomment after generateToken implementation
         const token = generateToken({
             id: user.id,
             username: user.username,
             exp: Date.now() + 60 * 60 * 1000, // 1 час валидност
         });
 
-        return { token }; */
+        return { token };
 
 
 
