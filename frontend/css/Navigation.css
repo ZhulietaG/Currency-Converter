@@ -19,9 +19,38 @@ nav{
 }*/
 
 
+.section-content{
+    max-width: var(--site-max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
+.burger-menu{
+    height: 40px;
+    width: 40px;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.burger-bar{
+    width: 40px;
+    height: 5px;
+    background-color: var(--white);
+    border-radius: var(--border-radius-s);
+}
+.unclicked{
+    background: var(--white) !important;
+}
+.clicked{
+    background: var(--black) !important;
+}
 header {
     background-color: var(--primary);
+    position: fixed;
+    z-index: 5;
+    width: 100%;
 }
 header .navbar{
     display: flex;
@@ -32,6 +61,8 @@ header .navbar{
 }
 .navbar .nav-logo .logo-text {
     color: var(--white);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
 }
 
 .navbar .nav-menu{
@@ -43,11 +74,54 @@ header .navbar{
     color: var(--white);
     padding: 10px 18px;
     font-size: var(--font-size-m);
-
     border-radius: var(--border-radius-m);
+    transition: 0.3s;
 }
 
 .navbar .nav-menu .nav-link:hover {
     color: var(--black);
     background-color: var(--secondary);
+}
+
+
+
+@media screen and (max-width: 900px) {
+    :root {
+        --font-size-m: 1rem;
+        --font-size-l: 1.3rem;
+        --font-size-xl: 1.5rem;
+        --font-size-xxl: 1.8rem;
+    }
+
+    .burger-menu {
+        z-index: 5;
+        display: flex;
+    }
+    .navbar .nav-menu{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 300px;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 100px;
+        background: var(--white);
+        transition: 0.3s ;
+    }
+
+    .hidden {
+        display: none !important;
+    }
+
+    .visible {
+        display: flex !important;
+    }
+
+    .navbar .nav-menu .nav-link {
+        color: var(--black);
+        display: block;
+        margin-top: 17px;
+        font-size: var(--font-size-l);
+    }
 }

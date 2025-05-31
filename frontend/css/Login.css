@@ -1,5 +1,4 @@
-
-.registration-page {
+.login-page {
     padding-top: 100px;
     height: 100vh;
     background-color: var(--accent-gray);
@@ -8,32 +7,23 @@
     grid-template-rows: 1fr 2fr 1fr;
 }
 
-.registration-page h1 {
-    padding: 16px 0 0 0;
+.login-title {
     grid-column: 2;
+    padding: 16px 0;
     text-align: center;
 }
 
-
-.reg-form {
+.login-form {
     grid-column: 2;
     background-color: var(--secondary);
     padding: 2rem;
     border-radius: 10px;
     color: var(--black);
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
 }
 
-.input-box {
-    #grid-column: span 3;
-}
-
-/*.input-box label {
-    font-size: var(--font-size-m);
-    width: 20%;
-}*/
-.input-box .reg-input {
+.login-form .login-input {
     width: 100%;
     padding: 10px 0;
     outline: none;
@@ -42,7 +32,7 @@
     border: 1px solid var(--accent-gray);
 }
 
-.reg-form .reg-btn {
+.login-form .login-btn {
     margin: 16px;
     padding: 5px;
     color: var(--white);
@@ -53,8 +43,7 @@
     border: 1px solid var(--primary);
     transition: 0.3s ease;
 }
-.reg-form .reg-btn:hover {
+.login-form .login-btn:hover {
     color: var(--primary);
     background-color: transparent;
 }
-
