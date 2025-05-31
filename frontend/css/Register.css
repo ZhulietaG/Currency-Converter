@@ -1,10 +1,12 @@
 
 .registration-page {
+    padding-top: 100px;
     height: 100vh;
+    background-color: var(--accent-gray);
     display: grid;
-    gap: 1rem;
-    grid-template-columns: 1fr 4fr 1fr;
-    grid-template-rows: 1fr 5fr 1fr;
+    #gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
 }
 
 .registration-page h1 {
@@ -14,31 +16,31 @@
 }
 
 
-form { /*container*/
+.reg-form {
     grid-column: 2;
     background-color: var(--secondary);
     padding: 2rem;
     border-radius: 10px;
-    color: var(--accent-light);
+    color: var(--black);
     display: grid;
-    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .input-box {
     grid-column: span 3;
 }
 
-.input-box label {
-    font-size: 32px;
-}
-.input-box input {
+/*.input-box label {
+    font-size: var(--font-size-m);
+    width: 20%;
+}*/
+.input-box .reg-input {
     width: 100%;
-    background-color: var(--secondary-dark);
-    color: white;
-    height: 30px;
-    font-size: 16px;
-    border: none;
-    border-radius: 10px;
+    padding: 10px;
+    outline: none;
+    background-color: var(--white);
+    border-radius: var(--border-radius-s);
+    border: 1px solid var(--accent-gray);
 }
 
 .reg-btn {

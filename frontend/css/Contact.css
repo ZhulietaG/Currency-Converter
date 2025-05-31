@@ -1,0 +1,105 @@
+/*.contact-container{
+
+}
+.contact-content {
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;
+    justify-content: space-between;
+}*/
+.contact-container {
+    padding-top: 100px;
+    height: 100vh;
+    background-color: var(--accent-gray);
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.contact-title {
+    padding: 16px 0;
+    text-align: center;
+}
+
+.contact-info-list {
+    font-size: var(--font-size-m);
+    padding: 2rem;
+    font-weight: var(--font-weight-medium);
+}
+
+.contact-form {
+    background-color: var(--secondary);
+    #padding: 2rem;
+    border-radius: 10px;
+    color: var(--black);
+    display: grid;
+}
+
+.contact-form .contact-input {
+    margin: 16px;
+    padding: 10px;
+    outline: none;
+    background-color: var(--white);
+    border-radius: var(--border-radius-s);
+    border: 1px solid var(--accent-gray);
+
+}
+
+.contact-form .contact-input:focus {
+    border-color: var(--accent-blue);
+}
+
+.contact-form .contact-text {
+    margin: 16px;
+    padding: 10px;
+    outline: none;
+    height: 300px;
+    resize: vertical;
+    border-radius: var(--border-radius-s);
+}
+.contact-form .contact-text:focus {
+    border-color: var(--accent-blue);
+}
+
+.contact-form .contact-btn {
+    margin: 16px;
+    color: var(--white);
+    background-color: var(--primary);
+    font-size: var(--font-size-m);
+    border-radius: var(--border-radius-m);
+    font-weight: var(--font-weight-medium);
+    border: 1px solid var(--primary);
+    transition: 0.3s ease;
+}
+.contact-form .contact-btn:hover {
+    color: var(--primary);
+    background-color: transparent;
+}
+@media (min-width: 850px) {
+    .contact-form {
+        max-width: 400px
+    }
+    .contact-list {
+        text-align: center;
+        #position: relative;
+        #left: 25%;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-container{
+        height: 100%;
+    }
+    .contact-content {
+        grid-template-columns: 1fr 5fr 1fr;
+        grid-template-rows: 1fr 3fr;
+    }
+    .contact-list {
+        grid-column: 2;
+    }
+    .form-container {
+        grid-column: 2;
+    }
+}
