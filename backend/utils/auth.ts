@@ -56,9 +56,9 @@ export function verifyToken(token: string): TokenPayload | null {
         return null;
     }
 
-    const decodedPayload = JSON.parse(
+    const decodedPayload: TokenPayload = JSON.parse(
         Buffer.from(payload, 'base64').toString()
-    ) as TokenPayload;
+    );
 
     if (decodedPayload.exp < Date.now()) {
         console.log('Token expired');
