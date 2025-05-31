@@ -1,7 +1,7 @@
 import '../css/App.css'
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {Home, LoginPage, Contact, NotFound, UsersOverview, Dashboard} from "../pages"
-import {Navigation} from "../components";
+import {Home, LoginPage, Contact, About, NotFound, UsersOverview, Dashboard} from "../pages"
+import {Footer, Navigation} from "../components";
 import {RegistrationPage} from "../pages/LoginPage/RegistrationPage.tsx";
 
 function App() {
