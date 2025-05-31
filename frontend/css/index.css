@@ -1,25 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
 :root {
   --white: #fff;
   --black: #000;
-  --primary-light: #efefef;
-  --primary-dark: #1A2324;
-  --secondary: #687356;
-  --secondary-light: #bdbe8e;
-  --secondary-dark: #31403d;
-  --accent-light: #f2d16c;
+  --primary: #333446;
+  --accent-blue: #7F8CAA;
+  --secondary: #B8CFCE;
+  --accent-gray: #EAEFEF;
+
+  /* Font Size */
+  --font-size-s: 0.9rem;
+  --font-size-n: 1rem;
+  --font-size-m: 1.12rem;
+  --font-size-l: 1.5rem;
+  --font-size-xl: 2rem;
+  --font-size-xxl: 2.3rem;
+
+  /* Font weight */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Font Radius */
+  --border-radius-s: 8px;
+  --border-radius-m: 30px;
+  --border-radius-circle: 50%;
+
+  --site-max-width: 1300px;
+
   --nav-height: 60px;
 }
-body {
+* {
   margin: 0;
   padding: 0;
+  font-family: "EB Garamond", serif;
 }
 ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
+}
+a {
+  text-decoration: none;
 }
 
-a {
-  color: var(--primary-light);
-  text-decoration: none;
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
 }

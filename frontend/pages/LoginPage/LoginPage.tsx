@@ -1,6 +1,6 @@
 import {useForm} from 'react-hook-form';
 import {useNavigate} from "react-router-dom";
-import {useState} from "react";
+
 
 
 interface LoginFormInputs {
@@ -33,7 +33,6 @@ export const LoginPage = () => {
             alert('Successfully logged in!');
 
             const result = await response.json();
-            console.log('Login response:', result);
 
             localStorage.setItem('token', result.token);
 

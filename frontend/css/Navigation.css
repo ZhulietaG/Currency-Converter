@@ -1,3 +1,4 @@
+/*
 nav{
     height: var(--nav-height);
     background-color: var(--primary-dark);
@@ -15,4 +16,38 @@ nav{
 }
 .nav-:hover{
     background-color: var(--primary-light);
+}*/
+
+
+
+header {
+    background-color: var(--primary);
+}
+header .navbar{
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.navbar .nav-logo .logo-text {
+    color: var(--white);
+}
+
+.navbar .nav-menu{
+    display: flex;
+    gap: 10px;
+}
+
+.navbar .nav-menu .nav-link {
+    color: var(--white);
+    padding: 10px 18px;
+    font-size: var(--font-size-m);
+
+    border-radius: var(--border-radius-m);
+}
+
+.navbar .nav-menu .nav-link:hover {
+    color: var(--black);
+    background-color: var(--secondary);
 }
