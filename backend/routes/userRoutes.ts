@@ -58,7 +58,7 @@ userRoutes.post("/login", async (req: Request, res: Response) => {
     const { email, password } = req.body;
 
     try {
-        const result = await userController.login(email, password);
+        const result = await userController.loggedUser(email, password);
         res.status(200).json(result);
     } catch (error: any) {
         res.status(401).send({ error: error.message });

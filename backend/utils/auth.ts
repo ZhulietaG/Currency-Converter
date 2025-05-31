@@ -6,6 +6,7 @@ const SECRET = "b83d6b5fc4f5d4434013b39416d79900376";
 export interface TokenPayload {
     id: string;
     username: string;
+    email: string;
     exp: number;
 }
 

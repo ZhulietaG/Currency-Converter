@@ -44,9 +44,9 @@ export const Dashboard = () => {
 
     return (
         <>
-            <h1>Edit user</h1>
+            <h1>Edit account</h1>
             <FormProvider {...methods}>
-                <Form onSubmit={onSubmit} submitButtonLabel={'Edit user'}/>
+                <Form onSubmit={onSubmit} submitButtonLabel={'Edit'}/>
             </FormProvider>
         </>
     )

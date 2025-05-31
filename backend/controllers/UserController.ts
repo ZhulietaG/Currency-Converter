@@ -29,25 +29,17 @@ export class UserController {
         return await userModel.delete(id);
     }
 
-    async login(email: string, password: string) {
+    async loggedUser(email: string, password: string) {
         const user = await userModel.getByEmail(email);
+
         if (!user) {
             throw new Error ("User not found");
         }
-
         if (user.password != password) {
             throw new Error ("Invalid email or password");
         }
 
-        const token = generateToken({
-            id: user.id,
-            username: user.username,
-            exp: Date.now() + 60 * 60 * 1000, // 1 час валидност
-        });
-
-        return { token, id: user.id };
-
-
+        return await userModel.login(email, password);
 
     }
 
