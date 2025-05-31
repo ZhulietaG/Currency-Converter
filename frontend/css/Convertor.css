@@ -5,12 +5,27 @@
     padding: 10px;
 }
 
+.container-fluid .currency-from {
+    color: black;
+}
+
+.container-fluid .currency-into {
+    color: black;
+}
+
 .form-control-lg{
     margin: 10px 0;
+    background-color: #1A2324;
+    color: white;
     display: inline-block;
-    width: 50%;
+    width: 90%;
+    height: 32px;
     font-size: 16px;
     text-align: center;
+    border-radius: 10px;
+    border-style: none;
+    border-bottom-style: solid;
+    border-bottom-color: white;
 }
 
 .currency-from{
