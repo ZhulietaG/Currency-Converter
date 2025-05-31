@@ -57,7 +57,6 @@ export class UserModel {
         const token = generateToken({
             id: user.id,
             username: user.username,
-            email: user.email,
             exp: Date.now() + (60 * 60 * 1000)
         });
 
