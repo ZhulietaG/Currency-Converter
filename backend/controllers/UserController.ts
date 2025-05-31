@@ -45,7 +45,7 @@ export class UserController {
             exp: Date.now() + 60 * 60 * 1000, // 1 час валидност
         });
 
-        return { token };
+        return { token, id: user.id };
 
 
 

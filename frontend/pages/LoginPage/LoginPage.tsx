@@ -33,10 +33,11 @@ export const LoginPage = () => {
             alert('Successfully logged in!');
 
             const result = await response.json();
+            console.log('Login response:', result);
 
             localStorage.setItem('token', result.token);
 
-            navigate("/dashboard/${result.id}");
+            navigate(`/dashboard/${result.id}`);
 
         }
         catch(error){
