@@ -41,6 +41,9 @@ ul {
 a {
   text-decoration: none;
 }
+image {
+  width: 100%;
+}
 
 button {
   cursor: pointer;
