@@ -11,12 +11,12 @@ export class UserModel {
     }
 
     async getAll() {
-        const [rows] = await this.db.query("SELECT * FROM users");
+        const [rows] = await this.db.query(`SELECT * FROM users`);
         return rows;
     }
 
     async getAllEmails() {
-        const [rows] = await this.db.query("SELECT email FROM users");
+        const [rows] = await this.db.query(`SELECT email FROM users`);
         return rows;
     }
 

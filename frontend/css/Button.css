@@ -1,0 +1,17 @@
+.button-action {
+    cursor: pointer;
+    background: var(--primary);
+    padding: 10px 15px;
+    border-radius: var(--border-radius-s);
+    color: var(--white);
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-medium);
+}
+
+.button-action:hover {
+    color: var(--black);
+    border: 2px solid var(--primary);
+    background: transparent;
+}

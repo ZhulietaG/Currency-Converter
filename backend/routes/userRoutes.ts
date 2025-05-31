@@ -8,7 +8,7 @@ export const userRoutes = Router();
 userRoutes.get("/user", async (req: Request, res: Response) => {
     res.send(await userController.getAllUsers());
 })
-userRoutes.get("emails", async (req: Request, res: Response) => {
+userRoutes.get("/emails", async (req: Request, res: Response) => {
     res.send(await userController.getAllEmails());
 })
 userRoutes.get("/user/:id", async (req: Request, res: Response) => {

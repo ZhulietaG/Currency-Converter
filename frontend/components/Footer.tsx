@@ -1,8 +1,9 @@
 import { FC } from "react";
+import "../css/Footer.css"
 
 export const Footer: FC = () => {
     return (
-        <footer style={{ backgroundColor: "#f2f2f2", padding: "20px", textAlign: "center" }}>
+        <footer className={"footer-section"}>
             <p>&copy; 2025 Your Company Name. All rights reserved.</p>
             <p>
                 <a href="/privacy-policy.html">Privacy Policy</a> |{" "}

@@ -1,4 +1,5 @@
 import {ReactNode} from "react";
+import "../css/UserCard.css"
 
 interface ListProps<T> {
     items: T[];
@@ -9,7 +10,7 @@ export const List = <T,>({ items, renderItem }: ListProps<T>) => {
     return (
         <ul>
             {items.map((item, index) => (
-                <li key={index}>{renderItem(item)}</li>
+                <li className={"user-card"} key={index}>{renderItem(item)}</li>
             ))}
         </ul>
     );

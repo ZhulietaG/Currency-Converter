@@ -1,0 +1,8 @@
+.user-card {
+    text-align: center;
+    width: 150px;
+    height: 200px;
+    padding: 1rem;
+    background: var(--secondary);
+    border-radius: var(--border-radius-m);
+}

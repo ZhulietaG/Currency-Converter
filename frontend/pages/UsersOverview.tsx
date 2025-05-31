@@ -2,6 +2,7 @@ import {FC, useState} from "react";
 import {List} from "../components/List.tsx";
 import {Button} from "../components";
 import {useNavigate} from "react-router-dom";
+import "../css/UsersOverview.css"
 
 export const UsersOverview: FC = () => {
     const navigate = useNavigate();
@@ -30,18 +31,21 @@ export const UsersOverview: FC = () => {
 
     return (
         <>
-            <List items={users} renderItem={(user) => {
-                return (
-                    <>
-                        <span>{user.username}</span>
-                        <div className={'actions'}>
-                            <Button text={'Edit'} onClick={() => editUser(user.id)}/>
-                            <Button text={'Delete'} onClick={() => deleteUser(user.id)}/>
-                        </div>
-                    </>
-                )
-            }}/>
-            <Button text={'Get Users'} onClick={getUsers}/>
+            <section className={"section-users"}>
+                <List items={users} renderItem={(user) => {
+                    return (
+                        <>
+                            <span className={"user-name"}>{user.username}</span>
+                            <div className={"user-profile"}></div>
+                            <div className={'actions'}>
+                                <Button text={'Edit'} onClick={() => editUser(user.id)}/>
+                                <Button text={'Delete'} onClick={() => deleteUser(user.id)}/>
+                            </div>
+                        </>
+                    )
+                }}/>
+                <Button text={'Get Users'} onClick={getUsers}/>
+            </section>
         </>
     )
 }

@@ -1,6 +1,7 @@
 import {useForm} from 'react-hook-form';
 import {useNavigate} from "react-router-dom";
-import"../../css/Login.css"
+import "../../css/Login.css"
+import {Button} from "../../components";
 
 
 
@@ -47,19 +48,16 @@ export const LoginPage = () => {
     };
 
     return (
-        <div className={"login-page"}>
-            <h1 className={"login-title"}>Bombardiro krokodilo LOGIN</h1>
-            <form className={"login-form"} onSubmit={handleSubmit(onSubmit)}>
-                <div className={"login-input-box"}>
-                    <input className={"login-input"} required={true} {...register("email")} type={"email"} placeholder={"Email address"}/>
-                </div>
-                <div className={"login-input-box"}>
-                    <input className={"login-input"} required={true} {...register("password")} type={"password"} placeholder={"Password"}/>
-                </div>
-
-                <button className={"login-btn"} type="submit">Login</button>
-            </form>
-        </div>
+        <section className={"login-section"}>
+            <div className={"login-wrapper"}>
+                <h2 className={"login-title"}>LOGIN</h2>
+                <form className={"form-container"} onSubmit={handleSubmit(onSubmit)}>
+                    <input className={"form-input"} required={true} {...register("email")} type={"email"} placeholder={"Email address"}/>
+                    <input className={"form-input"} required={true} {...register("password")} type={"password"} placeholder={"Password"}/>
+                    <Button text={"Login"} onClick={console.log}></Button>
+                </form>
+            </div>
+        </section>
     )
 
 }

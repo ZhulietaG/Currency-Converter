@@ -2,6 +2,7 @@ import {useNavigate, useParams} from "react-router-dom";
 import {FormProvider, useForm} from "react-hook-form";
 import {useEffect, useState} from "react";
 import {Form} from "../components/Form.tsx";
+import "../css/EditForm.css"
 
 export const EditAccount = () => {
     const navigation = useNavigate();
@@ -55,10 +56,14 @@ export const EditAccount = () => {
 
     return (
         <>
-            <h1>Edit account</h1>
-            <FormProvider {...methods}>
-                <Form onSubmit={onSubmit} submitButtonLabel={'Edit'}/>
-            </FormProvider>
+            <section className={"section-edit"}>
+                <div className={"edit-wrapper"}>
+                    <h2 className={"edit-title"}>Edit account</h2>
+                    <FormProvider {...methods}>
+                        <Form onSubmit={onSubmit} submitButtonLabel={'Edit'}/>
+                    </FormProvider>
+                </div>
+            </section>
         </>
     )
 }
