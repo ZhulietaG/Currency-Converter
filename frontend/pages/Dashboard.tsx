@@ -12,8 +12,11 @@ export const Dashboard = () => {
             const token = localStorage.getItem("token");
 
             if (token) {
+                console.log('Token found:', token);
                 const base64Payload = token.split('.')[1];
                 const decodedPayload = JSON.parse(atob(base64Payload));
+
+                console.log('Decoded Payload:', decodedPayload);
 
                 setUserId(decodedPayload['id']);
             }
@@ -21,11 +24,21 @@ export const Dashboard = () => {
         }, []);
 
 
+    console.log('userId before render:', userId);
+
+    if (!userId) {
+        return <div>Loading...</div>;
+    }
+
+
     return(
         <>
             <div>
-                <title>Edit account information:</title>
-                <Button text={"Edit account"} onClick={() => navigate(`/edit-account/:${userId}`)}/>
+                <h1>Edit account information:</h1>
+                <button onClick={() => navigate(`/edit-account/${userId}`)}>
+                    Edit Account
+                </button>
+
             </div>
         </>
         )
