@@ -34,7 +34,7 @@ export class UserModel {
         const [result] = await this.db.execute(`INSERT INTO users(id, username, email, password, is_active) VALUES (?, ?, ?, ?, ?)`, [
             uuidv4(), user.username, user.email, user.password, 1
         ]);
-        return `User with id created`;
+        return `User successfully created`;
     }
 
     async update(id: string, user: any) {
