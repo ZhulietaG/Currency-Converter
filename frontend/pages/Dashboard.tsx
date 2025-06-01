@@ -49,7 +49,7 @@ export const Dashboard = () => {
 
     return(
         <>
-            <section className={"section-dashboard"}>\
+            <section className={"section-dashboard"}>
                 <h1>Welcome, {userData.username}!</h1>
                 <div className={"dashboard-wrapper"}>
                     <h2>Profile Details:</h2>
@@ -61,6 +61,7 @@ export const Dashboard = () => {
                 </div>
                 <div className={"dashboard-wrapper"}>
                     <h2>Wallet</h2>
+                    <Button text={"Create Wallet"} onClick={() => navigate(`/create-wallet/${userId}`)}/>
                 </div>
             </section>
         </>

@@ -17,11 +17,13 @@ export type Wallet = {
     id: number;
     amount: number;
     currency: string;
+    user_id: string;
 }
 
 export type CreateWallet = {
     amount: number;
     currency: string;
+    user_id: string;
 }
 
 export interface TokenPayload {

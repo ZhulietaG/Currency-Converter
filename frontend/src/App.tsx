@@ -1,6 +1,16 @@
 import '../css/App.css'
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {Home, LoginPage, RegistrationPage, Contact, EditAccount, NotFound, UsersOverview, Dashboard} from "../pages"
+import {
+    Home,
+    LoginPage,
+    RegistrationPage,
+    Contact,
+    EditAccount,
+    NotFound,
+    UsersOverview,
+    Dashboard,
+    CreateWallet
+} from "../pages"
 import {Footer, Navigation} from "../components";
 
 function App() {
@@ -17,6 +27,7 @@ function App() {
                 <Route path={"/users"} element={<UsersOverview/>}></Route>
                 <Route path={"/dashboard/:id"} element={<Dashboard/>}></Route>
                 <Route path={"/edit-account/:id"} element={<EditAccount/>}></Route>
+                <Route path={"/create-wallet/:id"} element={<CreateWallet/>}></Route>
                 <Route path={"*"} element={<NotFound/>}></Route>
             </Routes>
             <Footer/>

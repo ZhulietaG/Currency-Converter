@@ -9,15 +9,19 @@ export class WalletController {
     }
 
     async getWalletById(id: string) {
-        return await walletModel.getById(id.toString());
+        return await walletModel.getById(id);
     }
 
     async getWalletByCurrency(currency: string) {
         return await walletModel.getByCurrency(currency);
     }
 
-    async createWallet(wallet: CreateWallet) {
-        return await walletModel.create(wallet);
+    async createWallet(id: string, wallet: CreateWallet) {
+        return await walletModel.create(id ,wallet);
+    }
+
+    updateWallet(id: string, wallet: any) {
+        return walletModel.update(id, wallet);
     }
 
     async deleteWallet(id: string) {

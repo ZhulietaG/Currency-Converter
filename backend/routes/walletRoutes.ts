@@ -23,13 +23,24 @@ walletRoutes.post("/wallet/find", async (req: Request, res: Response) => {
     }
 });
 
-walletRoutes.post("/wallet", async (req: Request, res: Response) => {
+walletRoutes.post("/wallet/:id", async (req: Request, res: Response) => {
+    const id = req.params.id;
     const data = req.body;
     try{
-        res.status(201).send(await walletController.createWallet(data));
+        res.status(201).send(await walletController.createWallet(id ,data));
     }
     catch (error: any) {
         res.status(400).send({ error: error.message });
+    }
+})
+
+walletRoutes.put("/wallet/:id", (req: Request, res: Response) => {
+    const id = req.params.id;
+    const data = req.body;
+    try {
+        res.status(200).send(walletController.updateWallet(id, data));
+    } catch (error: any) {
+        res.status(400).send({error: error.message});
     }
 })
 
