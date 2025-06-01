@@ -32,7 +32,7 @@ export const Home: FC = () => {
                     <div className={"about-details"}>
                         <h2 className={"section-title"}>About Us</h2>
                         <p className={"text"}>Welcome, Tarnished. You’ve found the one true portal between realms — of currency.
-                            In a world where runes hold power and grace guides your path, Grace to Gold was forged to bring clarity and control to your financial journey. Whether you hail from Limgrave or Leyndell (or London or Tokyo), we believe that exchanging currency shouldn’t be a boss fight.
+                            In a world where runes hold power and grace guides your path, Grace to Gold was forged to bring clarity and control to your financial journey. Whether you hail from Limgrave or Leyndell, we believe that exchanging currency shouldn’t be a boss fight.
                             Our mission is to provide a fast, transparent, and immersive way to convert money across the real-world economies — while honoring the spirit of the Lands Between.</p>
                     </div>
                 </div>
