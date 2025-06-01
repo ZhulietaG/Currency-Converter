@@ -13,6 +13,7 @@ import {
 } from "../pages"
 import {Footer, Navigation} from "../components";
 
+
 function App() {
 
   return (
@@ -27,6 +28,7 @@ function App() {
                 <Route path={"/users"} element={<UsersOverview/>}></Route>
                 <Route path={"/dashboard/:id"} element={<Dashboard/>}></Route>
                 <Route path={"/edit-account/:id"} element={<EditAccount/>}></Route>
+                <Route path={"/edit-wallet/:user_id/:wallet_id"} element={<EditWallet/>}></Route>
                 <Route path={"/create-wallet/:id"} element={<CreateWallet/>}></Route>
                 <Route path={"/edit-wallet/:id"} element={<EditWallet/>}></Route>
                 <Route path={"*"} element={<NotFound/>}></Route>

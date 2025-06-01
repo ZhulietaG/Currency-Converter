@@ -1,13 +1,21 @@
 import {FC, useEffect, useState} from "react";
 import {Button} from "../components";
 import {useNavigate} from "react-router-dom";
-import {useForm} from "react-hook-form";
+import {Controller,useForm} from "react-hook-form";
 import "../css/Register.css";
+import Select, {components} from "react-select";
+import {currency} from "../config/currency";
+const { Option } = components;
 
 export const CreateWallet: FC = () => {
 
     const navigation = useNavigate();
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, control } = useForm({
+        defaultValues: {
+            amount: 0,
+            currency: null,
+        },
+    });
     const [userId, setUserId] = useState<string | null>(null);
 
     useEffect(() => {
@@ -39,14 +47,37 @@ export const CreateWallet: FC = () => {
         }
 
     }
+    const OptionComponent: FC<any> = (props) => {
+        return(
+            <Option {...props}>
+                <span className={`currency-flag currency-flag-${props.data.value}`}></span>
+                {" "}
+                {props.data.label}
+            </Option>
+        )
+    }
 
     return (
         <section className={"register-section"}>
             <div className="register-wrapper">
-                <h1 className={"register-title"}>Register</h1>
+                <h2 className={"register-title"}>ADD Wallet</h2>
                 <form className={"register-form"} onSubmit={handleSubmit(onSubmit)}>
                     <input className={"reg-input"} required={true} {...register("amount")} type={"number"} placeholder={"Amount"}/>
-                    <input className={"reg-input"} required={true} {...register("currency")} type={"text"} placeholder={"Currency"}/>
+                    <Controller
+                        name="currency"
+                        control={control}
+                        render={({ field }) => (
+                            <Select
+                                {...field}
+                                options={currency}
+                                placeholder={"Select a currency"}
+                                components={{Option: OptionComponent}}
+                                onChange={(selected) => field.onChange(selected?.value || null)}
+                                value={currency.find(opt => opt.value === field.value)}
+                                required={true}
+                            />
+                        )}
+                    />
                     <Button text={"Add Wallet"} onClick={console.log}></Button>
                 </form>
             </div>

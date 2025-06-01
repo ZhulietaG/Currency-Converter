@@ -14,7 +14,7 @@ export const UsersOverview: FC = () => {
         setUsers(data);
     }
 
-    const deleteUser = async (id: number) => {
+    const deleteUser = async (id: string) => {
         try {
             await fetch(`http://localhost:3001/user/${id}`, {
                 method: 'DELETE'

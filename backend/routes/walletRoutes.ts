@@ -13,6 +13,11 @@ walletRoutes.get("/wallet/:id", async (req: Request, res: Response) => {
     res.send(await walletController.getWalletById(id));
 })
 
+walletRoutes.get("/wallets/:id", async (req: Request, res: Response) => {
+    const id = req.params.id;
+    res.send(await walletController.getWalletByUserId(id));
+})
+
 walletRoutes.post("/wallet/find", async (req: Request, res: Response) => {
     const { currency } = req.body;
     try {

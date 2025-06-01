@@ -21,8 +21,13 @@ export class WalletModel {
     }
 
     async getByCurrency(currency: string) {
-        const result = await this.db.execute<User[] & RowDataPacket[]>(`SELECT * FROM wallets WHERE currency = ?`, [currency]);
+        const result = await this.db.execute<User[] & RowDataPacket[]>(`SELECT * FROM users WHERE currency = ?`, [currency]);
         return result[0][0];
+    }
+
+    async getWalletByUserId(id: string) {
+        const [rows] = await this.db.execute<User[] & RowDataPacket[]>(`SELECT wallets.id, amount, currency FROM wallets INNER JOIN users on users.id = wallets.user_id WHERE users.id = ?`, [id])
+        return rows;
     }
 
     async create(id: string, wallet: CreateWallet) {

@@ -15,3 +15,12 @@ export const List = <T,>({ items, renderItem }: ListProps<T>) => {
         </ul>
     );
 };
+export const ListWallet = <T,>({ items, renderItem }: ListProps<T>) => {
+    return (
+        <ul className={"wallet-container"}>
+            {items.map((item, index) => (
+                <li key={index}>{renderItem(item)}</li>
+            ))}
+        </ul>
+    );
+};

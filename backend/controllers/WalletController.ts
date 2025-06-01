@@ -16,6 +16,10 @@ export class WalletController {
         return await walletModel.getByCurrency(currency);
     }
 
+    async getWalletByUserId(id: string) {
+        return await walletModel.getWalletByUserId(id);
+    }
+
     async createWallet(id: string, wallet: CreateWallet) {
         return await walletModel.create(id ,wallet);
     }

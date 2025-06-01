@@ -32,3 +32,79 @@
     margin: 10px auto;
     border-radius: var(--border-radius-s);
 }
+
+.dashboard-wallet{
+    max-width: var(--site-max-width);
+    width: 80%;
+}
+
+.wallet-holder{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1rem;
+    border-bottom: 2px solid var(--secondary);
+    font-size: var(--font-size-l);
+    font-weight: var(--font-weight-medium);
+}
+
+.wallet-amount {
+    width: 200px;
+}
+.wallet-currency {
+    width: 20px;
+}
+
+.dashboard-profile{
+    position: fixed;
+    top: 90%;
+    left: 90%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--secondary);
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.dashboard-profile:hover .dashboard-profile-text {
+    opacity: 1;
+    display: block;
+}
+
+.dashboard-profile-icon{
+    height: 50px;
+    margin: 12%;
+}
+.dashboard-profile-text{
+    max-width: 100px;
+    background-color: var(--secondary);
+    padding: 1px 20px;
+    color: var(--black);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-m);
+    position: absolute;
+    top: -80px;
+    left: -30px;
+    transition: all 0.25s ease;
+    opacity: 0;
+    display: none;
+    animation: in-animation 0.25s ease;
+}
+
+.dashboard-create-wallet{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    max-width: var(--site-max-width);
+    width: 80%;
+    padding: 30px 20px;
+}
+
+@keyframes in-animation {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
