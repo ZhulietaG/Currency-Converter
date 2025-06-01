@@ -13,6 +13,17 @@ export type CreateUser = {
     isActive: boolean;
 }
 
+export type Wallet = {
+    id: number;
+    amount: number;
+    currency: string;
+}
+
+export type CreateWallet = {
+    amount: number;
+    currency: string;
+}
+
 export interface TokenPayload {
     id: string;
     username: string;
