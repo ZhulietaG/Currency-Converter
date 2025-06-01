@@ -8,7 +8,7 @@ walletRoutes.get("/wallet", async (req: Request, res: Response) => {
     res.send(await walletController.getAllWallets());
 })
 
-walletRoutes.get("/wallet:id", async (req: Request, res: Response) => {
+walletRoutes.get("/wallet/:id", async (req: Request, res: Response) => {
     const id = req.params.id;
     res.send(await walletController.getWalletById(id));
 })

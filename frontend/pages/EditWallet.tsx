@@ -11,7 +11,7 @@ export const EditWallet: FC = () => {
     const { register, handleSubmit, getValues } = useForm();
     const [userId, setUserId] = useState<string | null>(null);
     const [walletData, setWalletData] = useState<Wallet | null>(null);
-    const { walletId } = useParams();
+    const { id } = useParams();
 
 
     useEffect(() => {
@@ -47,7 +47,7 @@ export const EditWallet: FC = () => {
     useEffect(() => {
 
         const fetchedData = async () => {
-            const response = await fetch(`http://localhost:3001/wallet/${walletId}`)
+            const response = await fetch(`http://localhost:3001/wallet/${id}`)
             const data = await response.json();
             setWalletData(data);
             };
@@ -57,7 +57,7 @@ export const EditWallet: FC = () => {
     const updateAmount = async (newAmount: number) => {
         try {
 
-            await fetch(`http://localhost:3001/wallet/${walletId}`, {
+            await fetch(`http://localhost:3001/wallet/${id}`, {
                 method: "PUT",
                 headers: {
                     'Content-Type': 'application/json'

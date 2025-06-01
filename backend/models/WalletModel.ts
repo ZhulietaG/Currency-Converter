@@ -16,12 +16,12 @@ export class WalletModel {
     }
 
     async getById(id: string) {
-        const result = await this.db.execute<Wallet[] & RowDataPacket[]>(`SELECT * FROM walletss WHERE id = ?`, [id]);
+        const result = await this.db.execute<Wallet[] & RowDataPacket[]>(`SELECT * FROM wallets WHERE id = ?`, [id]);
         return result[0][0];
     }
 
     async getByCurrency(currency: string) {
-        const result = await this.db.execute<User[] & RowDataPacket[]>(`SELECT * FROM users WHERE currency = ?`, [currency]);
+        const result = await this.db.execute<User[] & RowDataPacket[]>(`SELECT * FROM wallets WHERE currency = ?`, [currency]);
         return result[0][0];
     }
 
