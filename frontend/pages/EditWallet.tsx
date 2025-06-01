@@ -62,7 +62,10 @@ export const EditWallet: FC = () => {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(newAmount),
+                body: JSON.stringify({
+                    ...walletData,
+                    amount: newAmount
+                    }),
             })
             navigation(`/dashboard/${userId}`);
 
