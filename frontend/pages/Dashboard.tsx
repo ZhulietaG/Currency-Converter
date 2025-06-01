@@ -49,13 +49,18 @@ export const Dashboard = () => {
 
     return(
         <>
-            <section className={"section-dashboard"}>
+            <section className={"section-dashboard"}>\
                 <h1>Welcome, {userData.username}</h1>
-                <h2>Profile information:</h2>
-                <p>Email: address: {userData.email}</p>
+                <div className={"dashboard-wrapper"}>
+                    <h2>Profile information:</h2>
+                    <p>Email: address: {userData.email}</p>
+                </div>
                 <div className={"dashboard-wrapper"}>
                     <h2 className={""}>Edit account information:</h2>
                     <Button text={"Edit account"} onClick={() => navigate(`/edit-account/${userId}`)}/>
+                </div>
+                <div className={"dashboard-wrapper"}>
+                    <h2>Wallet</h2>
                 </div>
             </section>
         </>
