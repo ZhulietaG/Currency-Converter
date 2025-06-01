@@ -108,7 +108,7 @@ export const Convertor: FC<Props> = (props: Props) => {
                     </div>
                     <div className="currency-swap">
                         <button className="btn currency-swap-btn" onClick={handleSwitch}>
-                            Swap
+                            Swap🗘
                         </button>
                     </div>
                     <div className="currency-into">

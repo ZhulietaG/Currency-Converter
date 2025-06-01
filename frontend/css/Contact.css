@@ -16,6 +16,15 @@
     text-transform: uppercase;
     font-size: var(--font-size-xl);
 }
+.contact-title::after {
+    content: "";
+    width: 80px;
+    height: 5px;
+    display: block;
+    background: var(--secondary);
+    margin: 10px auto;
+    border-radius: var(--border-radius-s);
+}
 
 .contact-info-list {
     max-width: 70%;

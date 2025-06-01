@@ -37,7 +37,7 @@ export const RegistrationPage = () => {
     return (
         <section className={"register-section"}>
         <div className="register-wrapper">
-            <h1 className={"register-title"}>No tralalelo maidens Form</h1>
+            <h1 className={"register-title"}>Register</h1>
             <form className={"register-form"} onSubmit={handleSubmit(onSubmit)}>
                 <input className={"reg-input"} required={true} {...register("username")} type={"text"} placeholder={"Username"}/>
                 <input className={"reg-input"} required={true} {...register("email")} type={"text"} placeholder={"Email"}/>

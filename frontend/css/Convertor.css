@@ -21,12 +21,13 @@
 .form-control-lg{
     margin: 10px;
     height: 32px;
-    font-size: 16px;
     text-align: center;
     border-radius: 10px;
     border-style: none;
     border-bottom-style: solid;
     border-bottom-color: white;
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-m);
 }
 
 .currency-from{
@@ -42,6 +43,10 @@
 .result{
     color: var(--black);
 }
+.css-13cymwt-control{
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-medium);
+}
 
 .btn {
     margin: 10px;
@@ -49,7 +54,8 @@
     background-color: var(--primary);
     border: 2px solid transparent;
     color: var(--white);
-    border-radius: var(--border-radius-m);
+    border-radius: var(--border-radius-s);
+    font-size: var(--font-size-m);
     font-weight: var(--font-weight-medium);
     transition: 0.3s ease;
 }
@@ -60,6 +66,21 @@
     color: var(--black);
 }
 
+.currency-value{
+    margin: 10px;
+    font-size: var(--font-size-l);
+    font-weight: var(--font-weight-medium);
+}
+.currency-result{
+    margin: 10px;
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-l);
+}
+.currency-rate{
+    margin: 10px;
+    font-size: var(--font-size-s);
+    color: var(--black);
+}
 @media screen and (max-width: 900px) {
     .container-fluid{
         width: 270px;
