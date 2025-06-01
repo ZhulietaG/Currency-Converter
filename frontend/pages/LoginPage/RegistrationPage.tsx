@@ -40,7 +40,7 @@ export const RegistrationPage = () => {
             <h1 className={"register-title"}>Register</h1>
             <form className={"register-form"} onSubmit={handleSubmit(onSubmit)}>
                 <input className={"reg-input"} required={true} {...register("username")} type={"text"} placeholder={"Username"}/>
-                <input className={"reg-input"} required={true} {...register("email")} type={"text"} placeholder={"Email"}/>
+                <input className={"reg-input"} required={true} {...register("email")} type={"email"} placeholder={"Email"}/>
                 {existingEmails && <p>Email already taken</p>}
                 <input className={"reg-input"} required={true} {...register("password")} type={"password"} placeholder={"Password"}/>
                 <Button text={"Register"} onClick={console.log}></Button>
