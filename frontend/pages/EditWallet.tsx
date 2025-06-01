@@ -59,7 +59,7 @@ export const EditWallet: FC = () => {
                 },
                 body: JSON.stringify(data),
             })
-            navigation(`/dashboard/${userId}`);
+            navigation(`/dashboard/${user_id}`);
 
         } catch (e) {
             console.error('Failed to update wallet', e);
