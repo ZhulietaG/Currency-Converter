@@ -1,13 +1,7 @@
 import crypto from "crypto";
+import {TokenPayload} from "../common/interface";
 
 const SECRET = "b83d6b5fc4f5d4434013b39416d79900376";
-
-
-export interface TokenPayload {
-    id: string;
-    username: string;
-    exp: number;
-}
 
 function base64urlEncode(str: string) {
     return Buffer.from(str)
@@ -17,7 +11,7 @@ function base64urlEncode(str: string) {
         .replace(/\//g, '_');
 }
 
-export function generateToken(payload: TokenPayload): string {
+export const generateToken = (payload: TokenPayload): string => {
     const header = {
         alg: "HS256",
         typ: "JWT",
@@ -38,7 +32,7 @@ export function generateToken(payload: TokenPayload): string {
     return `${data}.${signature}`;
 }
 
-export function verifyToken(token: string): TokenPayload | null {
+export const verifyToken = (token: string): TokenPayload | null => {
     const [header, payload, signature] = token.split('.');
     if (!header || !payload || !signature) return null;
 

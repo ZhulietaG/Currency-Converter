@@ -11,12 +11,12 @@ userRoutes.get("/user", async (req: Request, res: Response) => {
 userRoutes.get("/emails", async (req: Request, res: Response) => {
     res.send(await userController.getAllEmails());
 })
-userRoutes.get("/user/:id", async (req: Request, res: Response) => {
+userRoutes.get("/user/:id", authenticateMiddleware, async (req: Request, res: Response) => {
     const id = req.params.id;
     res.send(await userController.getUserById(id));
 })
 
-userRoutes.post("/user/find", async (req: Request, res: Response) => {
+userRoutes.post("/user/find", authenticateMiddleware, async (req: Request, res: Response) => {
     const { email } = req.body;
     try {
         const user = await userController.getUserByEmail(email);
@@ -35,7 +35,7 @@ userRoutes.post("/user", async (req: Request, res: Response) => {
         res.status(400).send({ error: error.message });
     }
 })
-userRoutes.put("/user/:id", (req: Request, res: Response) => {
+userRoutes.put("/user/:id", authenticateMiddleware, (req: Request, res: Response) => {
     const id = req.params.id;
     const data = req.body;
     try {

@@ -12,3 +12,9 @@ export type CreateUser = {
     password: string;
     isActive: boolean;
 }
+
+export interface TokenPayload {
+    id: string;
+    username: string;
+    exp: number;
+}
