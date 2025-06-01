@@ -26,7 +26,7 @@ userRoutes.post("/user/find", authenticateMiddleware, async (req: Request, res: 
     }
 });
 
-userRoutes.post("/user", async (req: Request, res: Response) => {
+userRoutes.post("/user", authenticateMiddleware, async (req: Request, res: Response) => {
     const data = req.body;
     try{
         res.status(201).send(await userController.createUser(data));

@@ -17,13 +17,15 @@ export const LoginPage = () => {
 
     const navigate = useNavigate();
     const { register, handleSubmit } = useForm<LoginFormInputs>();
+    const token = localStorage.getItem("token");
 
     const onSubmit = async (data: LoginFormInputs)=> {
         try{
             const response = await fetch('http://localhost:3001/login', {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`
                 },
                 body: JSON.stringify(data)
             })

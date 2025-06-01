@@ -12,8 +12,14 @@ export const EditAccount = () => {
     const { id } = useParams();
 
 
+    const token = localStorage.getItem("token");
+
     const getUser = async (id: string) => {
-        const response = await fetch(`http://localhost:3001/user/${id}`)
+        const response = await fetch(`http://localhost:3001/user/${id}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
         const data = await response.json();
         const formattedUser = {
             username: data.username,
@@ -27,7 +33,6 @@ export const EditAccount = () => {
     useEffect(() => {
         (async () => {
             await getUser(id!);
-            const token = localStorage.getItem("token");
 
             if (token) {
                 const base64Payload = token.split('.')[1];
@@ -43,7 +48,8 @@ export const EditAccount = () => {
             await fetch(`http://localhost:3001/user/${id}`, {
                 method: "PUT",
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + token
                 },
                 body: JSON.stringify(data),
             })
