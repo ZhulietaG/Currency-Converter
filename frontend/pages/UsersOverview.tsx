@@ -26,7 +26,7 @@ export const UsersOverview: FC = () => {
     }
 
     const editUser = (id: string) => {
-        navigate(`/dashboard/${id}`);
+        navigate(`/edit-account/${id}`);
     }
 
     return (
