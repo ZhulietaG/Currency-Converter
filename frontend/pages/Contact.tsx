@@ -1,12 +1,12 @@
 import {FC} from "react";
 import "../css/Contact.css";
+import {Button} from "../components";
 
 export const Contact: FC = () => {
     return (
-        <section className={"contact-container"}>
+        <section className={"contact-section"}>
             <h2 className={"contact-title"}>Contact us</h2>
             <div className={"contact-content"}>
-                <div className={"contact-list"}>
                     <ul className={"contact-info-list"}>
                         <li className={"contact-info"}>
                             <p>Email address: support@currencyconv.com)</p>
@@ -21,12 +21,11 @@ export const Contact: FC = () => {
                             <p>Closed on Saturday and Sunday</p>
                         </li>
                     </ul>
-                </div>
-                <div className={"form-container"}>
+                <div className={"contact-wrapper"}>
                     <form className={"contact-form"}>
                         <input className={"contact-input"} required={true}  type={"email"} placeholder={"Email address"}/>
                         <textarea className={"contact-text"} required={true} placeholder={"Your message"}/>
-                        <button className={"contact-btn"}>Submit</button>
+                        <Button text={"Login"} onClick={console.log}></Button>
                     </form>
                 </div>
             </div>

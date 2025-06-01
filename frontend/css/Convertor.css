@@ -44,20 +44,20 @@
 }
 
 .btn {
-    margin: 10px 10px;
-    padding: 15px 15px;
-    text-align: center;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 16px;
-    background-color: #31403d;
-    color: white;
-    border-radius: 5px;
+    margin: 10px;
+    padding: 10px 26px;
+    background-color: var(--primary);
+    border: 2px solid transparent;
+    color: var(--white);
+    border-radius: var(--border-radius-m);
+    font-weight: var(--font-weight-medium);
+    transition: 0.3s ease;
 }
 
 .btn:hover {
-    background-color: #1A2324;
-    color: #f2d16c;
+    border-color: var(--black);
+    background-color: transparent;
+    color: var(--black);
 }
 
 @media screen and (max-width: 900px) {
