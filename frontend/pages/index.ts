@@ -7,4 +7,5 @@ export {EditAccount} from "./EditAccount.tsx";
 export {Dashboard} from "./Dashboard.tsx";
 export {About} from "./About.tsx";
 export {Contact} from "./Contact.tsx";
-export {CreateWallet} from "./CrateWallet.tsx";
+export {CreateWallet} from "./CreateWallet.tsx";
+export {EditWallet} from "./EditWallet.tsx";

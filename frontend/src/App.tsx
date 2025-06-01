@@ -9,7 +9,7 @@ import {
     NotFound,
     UsersOverview,
     Dashboard,
-    CreateWallet
+    CreateWallet, EditWallet
 } from "../pages"
 import {Footer, Navigation} from "../components";
 
@@ -28,6 +28,7 @@ function App() {
                 <Route path={"/dashboard/:id"} element={<Dashboard/>}></Route>
                 <Route path={"/edit-account/:id"} element={<EditAccount/>}></Route>
                 <Route path={"/create-wallet/:id"} element={<CreateWallet/>}></Route>
+                <Route path={"/edit-wallet/:id"} element={<EditWallet/>}></Route>
                 <Route path={"*"} element={<NotFound/>}></Route>
             </Routes>
             <Footer/>
