@@ -26,7 +26,7 @@ export const RegistrationPage = () => {
                     },
                     body: JSON.stringify(data)
                 })
-            navigation('/users');
+            navigation('/login');
         }
         catch(err){
             console.error("User creation unsuccessful.\n", err);
