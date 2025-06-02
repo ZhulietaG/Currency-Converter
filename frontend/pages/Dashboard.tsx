@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {NavLink, useNavigate} from "react-router-dom";
+import {NavLink, useNavigate, useParams} from "react-router-dom";
 import {Button, ListWallet} from "../components";
 import "../css/Dashboard.css"
 
@@ -11,6 +11,7 @@ interface User {
 
 export const Dashboard = () => {
     const [userId, setUserId] = useState<string | null>(null);
+    const {id} = useParams();
     const [userData, setUserData] = useState<User | null>(null);
     const navigate = useNavigate();
     const [wallets, setWallets] = useState<User[any]>([]);
@@ -24,7 +25,13 @@ export const Dashboard = () => {
 
                 setUserId(decodedPayload['id']);
             }
-        }, []);
+
+            if(userId && id && userId != id) {
+                alert("You don't have access to this dashboard.");
+                navigate(`/dashboard/${userId}`);
+            }
+
+        }, [userId, id, navigate]);
 
     useEffect(() => {
             const fetchedData = async () => {
