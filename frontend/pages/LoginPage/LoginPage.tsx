@@ -34,8 +34,6 @@ export const LoginPage = () => {
                 throw new Error("Login failed.");
             }
 
-            alert('Successfully logged in!');
-
             const result = await response.json();
 
             localStorage.setItem('token', result.token);
